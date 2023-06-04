@@ -13,15 +13,15 @@ class Solution {
         }
         System.out.println(first+" "+last);
         //System.out.println()
-        /*int count1=0;
-        if(first!=0){
-        for(int i=first;i>=1;i--){
+        int count1=0;
+        for(int i=first;i>=0;i--){
+            if(i==0)
+                break;
                 count1++;
                 int temp=nums[i];
                 nums[i]=nums[i-1];
                 nums[i-1]=temp;
             System.out.println(i);
-        }
         }
         /*while(first!=1){
             int temp=nums[first];
@@ -30,16 +30,19 @@ class Solution {
             first--;
             count1++;
         }*/
-        
-        /*int count2=0;
-        if(last!=n-1){
-        for(int i=last;i<n-1;i++){
+        for(int i = 0; i < n; ++i){
+            //if(nums[i] == 1) first = i;
+            if(nums[i] == n) last = i;
+        }
+        int count2=0;
+        for(int i=last;i<n;i++){
+            if(i==n-1)
+                break;
             count2++;
             int temp=nums[i];
             nums[i]=nums[i+1];
             nums[i+1]=temp;
             System.out.println(i);
-        }
         }
         /*while(last!=n-2){
             int temp=nums[last];
@@ -49,11 +52,11 @@ class Solution {
             count2++;
         }*/
         //return count1+count2;
-        int count=0;
+        /*int count=0;
         if(first<last)
             count=first+(n-1-last);
         if(first>last)
-            count=first+(n-1-last)-1;
-        return count;
+            count=first+(n-1-last)-1;*/
+        return count1+count2;
     }
 }
