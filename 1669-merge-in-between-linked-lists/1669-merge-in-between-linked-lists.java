@@ -31,8 +31,10 @@ class Solution {
             temp1=temp1.next;
             
         }
+        
         j=a;
         temp3=temp1.next;
+        temp1.next=list2;
         while(j!=b+1){
             if(j==b+1){
                 temp3=temp3.next;
@@ -43,7 +45,7 @@ class Solution {
             temp3=temp3.next;
         }
         //System.out.println(temp1.val+" "+temp2.val+" "+temp3.val);
-        temp1.next=list2;
+        
         temp2.next=temp3;
         return list1;
         
