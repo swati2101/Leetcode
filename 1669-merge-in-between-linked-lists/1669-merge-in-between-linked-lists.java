@@ -31,6 +31,8 @@ class Solution {
             temp1=temp1.next;
             
         }
+        j=a;
+        temp3=temp1.next;
         while(j!=b+1){
             if(j==b+1){
                 temp3=temp3.next;
