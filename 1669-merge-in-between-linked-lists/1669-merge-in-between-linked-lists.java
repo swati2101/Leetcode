@@ -10,20 +10,42 @@
  */
 class Solution {
     public ListNode mergeInBetween(ListNode list1, int a, int b, ListNode list2) {
-        ListNode left = list1;
-        for (int i = 1; i < a; i++)
-            left = left.next;
-        
-        ListNode middle = left;
-        for (int i = a; i <= b; i++)
-            middle = middle.next;
-        
-		left.next = list2;
-        while (list2.next != null)
-            list2 = list2.next;
-        
-        list2.next = middle.next;
+        ListNode temp1=list1;
+        ListNode temp3=list1;
+        ListNode temp2=list2;
+        while(temp2.next!=null){
+            temp2=temp2.next;
+            
+        }
+        System.out.println(temp2.val);
+        int i=0,j=0;
+        while(i!=a-1){
+            if(i==a-1){
+                temp1=temp1.next;
+                //System.out.println(temp1.val+" "+i);
+                break;
+            }
+            
+            i++;
+            
+            temp1=temp1.next;
+            
+        }
+        j=a;
+        temp3=temp1.next;
+        while(j!=b+1){
+            if(j==b+1){
+                temp3=temp3.next;
+                //System.out.println(temp3.val+" "+j);
+                break;
+            }
+            j++;
+            temp3=temp3.next;
+        }
+        //System.out.println(temp1.val+" "+temp2.val+" "+temp3.val);
+        temp1.next=list2;
+        temp2.next=temp3;
         return list1;
-
+        
     }
 }
